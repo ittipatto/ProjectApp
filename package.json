@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "private": false,
+  "repository": "https://github.com/ittipatto/ProjectApp",
   "scripts": {
     "start": "node app.js"
   },
