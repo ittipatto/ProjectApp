@@ -1,0 +1,47 @@
+/*- - */
+table, td, th {
+  border: 0.5px black solid;
+  text-align: left;
+  padding: 10px;
+}
+table {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 100%;
+  border-collapse: collapse;
+}
+th {
+  background: lightgoldenrodyellow;
+}
+td {
+  background-color:aliceblue;
+}
+p, li {
+  font-size: 16px;
+  line-height: 3;
+  letter-spacing: 1px;
+}
+
+ol.i {
+  list-style-type: lower-roman;
+}
+h2 {
+  margin: 10px 40px;
+}
+nav {
+  display: none;
+  margin: 10px;
+  margin-bottom: 50px;
+}
+#login form p input {
+  width: 50%;
+}
+
+th, td {
+  text-indent: 20px;
+}
+
+tr td:nth-child(2) , tr td:nth-child(3) {
+  text-align: center;
+}

@@ -1,0 +1,17 @@
+/*- - */
+
+#input {
+  width: 70%;
+  height: 50px;
+}
+
+
+@media screen and (max-width: 700px) {
+  .row {
+      flex-direction: row;
+  }
+  .navbar {
+      flex-direction: row;
+  }
+
+}

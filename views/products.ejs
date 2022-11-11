@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        สินค้าทั้งหมด
+    </title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/products.css' />
+</head>
+
+<body>
+    <div class="header">
+        <h1>สินค้าทั้งหมด</h1>
+    </div>
+    <%- include layout %>
+
+        <div id="main">
+            <div class="content">
+                <h2>Search</h2>
+                <div id="searchWrapper">
+                    <!-- <input type="text" name="searchBar" id="searchBar" placeholder="search for a product" class="form-control"> -->
+                    <!-- <form action="/products/search" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="searchBar" id="searchBar" placeholder="search for a product" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-secondary">ค้นหา</button>
+                </form> -->
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+                    <h2>รายการสินค้า</h2>
+                    <table id="list">
+                        <tr id="headerTitle">
+                            <th id="name">ชื่อ</th>
+                            <th id="price">ราคา (บาท)</th>
+                            <th id="number">จำนวนที่เหลือ</th>
+                            <th id="dnumber">จำนวนที่อันตราย</th>
+                            <th id="snumber">จำนวนที่ปลอดภัย</th>
+
+                        </tr>
+                        <% Object.values(manages).forEach(function(product){ %>
+                            <tr>
+                                <td id="name">
+                                    <%= product.name %>
+                                </td>
+                                <td id="price">
+                                    <%= product.price %>
+                                </td>
+                                <% if(product.number>= product.safeNumber){ %>
+                                    <td id="number" style="color: green">
+                                        <%= product.number %>
+                                    </td>
+                                    <% }else if(product.number>= product.dangerNumber) { %>
+                                        <td id="number" style="color: orange">
+                                            <%= product.number %>
+                                        </td>
+                                        <% }else { %>
+                                            <td id="number" style="color: red">
+                                                <%= product.number %>
+                                            </td>
+                                            <% } %>
+                                <td id="dnumber">
+                                    <%= product.dangerNumber %>
+                                </td>
+                                <td id="snumber">
+                                    <%= product.safeNumber %>
+                                </td>
+                                </tr>
+                            <% }) %>
+                    </table>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
+
+<script src="/javascripts/product.js"></script>
